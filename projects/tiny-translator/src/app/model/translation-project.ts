@@ -130,7 +130,8 @@ export class TranslationProject {
    * Check, wether a publish is possible.
    */
   public canPublish(): boolean {
-    return this.translationFile && this.translationFile.fileDescription().configuration.canPublish();
+    return this.translationFile && this.translationFile.fileDescription() != null && 
+    this.translationFile.fileDescription().configuration.canPublish();
   }
 
   /**
